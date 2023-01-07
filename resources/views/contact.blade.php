@@ -6,5 +6,5 @@
     <input type="text" id="email" name="email">
     <label for="message">Message: </label>
     <textarea id="message" name="message"></textarea><br>
-    <button type="submit">Envoyer</button>
+    <button type="submit">Envoyer </button>
 </form>
