@@ -29,6 +29,7 @@ Route::post('formulaire', function (Illuminate\Http\Request $request){
     $email = $request->input('email');
     $message = $request->input('message');
 
+
     Mail:fake();
     Mail::send('contact', ['name' => $name, 'email' => $email, 'message' => $message], function ($m) use ($name,$email){
         $m->from($email, $name);

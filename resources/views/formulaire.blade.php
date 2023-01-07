@@ -1,4 +1,4 @@
-<form method="POST" action="/formulaire">
+<form method="POST" action="/contact">
     @csrf
     <label for="name">Name: </label>
     <input type="text" id="name" name="name"><br>
