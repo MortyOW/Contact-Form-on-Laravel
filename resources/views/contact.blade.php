@@ -1,12 +1,7 @@
-<form method="POST" action="/contact">
-    @csrf
-    <label for="name">Name: </label>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email: </label>
-    <input type="text" id="email" name="email">
-    <label for="message">Message: </label>
-    <textarea id="message" name="message"></textarea><br>
-    <button type="submit">Envoyer </button>
-</form>
+<p>Bonjour,</p>
+<p>Vous avez recu un nouveau message de contact: </p>
+<p>Nom: {{ htmlspecialchars((string)$name) }}</p>
+<p>Email: {{ htmlspecialchars((string)$email) }}</p>
+<p>Message: {{ htmlspecialchars((string)$message) }}</p>
 
-
+<p>Cordialement</p>

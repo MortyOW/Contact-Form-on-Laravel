@@ -20,17 +20,18 @@ Route::get('/', function () {
 
 // Afficher le formulaire de contact
 
-Route::get('contact', function (){
-    return view('contact');
+Route::get('formulaire', function (){
+    return view('formulaire');
 });
 
-Route::post('contact', function (Illuminate\Http\Request $request){
+Route::post('formulaire', function (Illuminate\Http\Request $request){
     $name = $request->input('name');
     $email = $request->input('email');
     $message = $request->input('message');
 
-    Mail::send('email.received', ['name' => $name, 'email' => $email, 'message' => $message], function ($m) use ($name,$email){
+    Mail:fake();
+    Mail::send('contact', ['name' => $name, 'email' => $email, 'message' => $message], function ($m) use ($name,$email){
         $m->from($email, $name);
-        $m->to('adamsimon2002@gmail.com', 'Adam')->subject('Test du formulaire de contact');
+        $m->to('contact@example.com', 'Contact')->subject('Test du formulaire de contact');
     });
 });
