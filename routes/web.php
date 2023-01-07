@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,15 @@ Route::get('/', function () {
 
 Route::get('contact', function (){
     return view('contact');
+});
+
+Route::post('contact', function (Illuminate\Http\Request $request){
+    $name = $request->input('name');
+    $email = $request->input('email');
+    $message = $request->input('message');
+
+    Mail::send('email.received', ['name' => $name, 'email' => $email, 'message' => $message], function ($m) use ($name,$email){
+        $m->from($email, $name);
+        $m->to('adamsimon2002@gmail.com', 'Adam')->subject('Test du formulaire de contact');
+    });
 });
