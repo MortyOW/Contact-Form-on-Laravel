@@ -27,11 +27,12 @@ Route::get('formulaire', function (){
 Route::post('formulaire', function (Illuminate\Http\Request $request){
     $name = $request->input('name');
     $email = $request->input('email');
-    $message = $request->input('message');
+    $messages = $request->input('message');
 
 
-    Mail:fake();
-    Mail::send('contact', ['name' => $name, 'email' => $email, 'message' => $message], function ($m) use ($name,$email){
+
+
+    Mail::send('contact', ['name' => $name, 'email' => $email, 'messages' => $messages], function ($m) use ($name,$email){
         $m->from($email, $name);
         $m->to('contact@example.com', 'Contact')->subject('Test du formulaire de contact');
     });
