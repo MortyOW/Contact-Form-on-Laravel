@@ -12,11 +12,11 @@
     <form method="POST" action="/formulaire">
         @csrf
         <label for="name">Prénom: </label>
-        <input type="text" id="name" name="name"><br>
+        <input type="text" id="name" name="name" required><br>
         <label for="email">Email: </label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="email" name="email" required>
         <label for="message">Message: </label>
-        <input type="text" name="message" id="message">
+        <input type="text" name="message" id="message" required>
         <button type="submit">Envoyer </button>
     </form>
 </body>
